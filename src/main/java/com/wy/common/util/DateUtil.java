@@ -50,7 +50,7 @@ public class DateUtil {
 		c.add(Calendar.MONTH, 1);
 		Date monthBegin = getMonthBegin(c.getTime());
 		c.setTime(monthBegin);
-		c.add(Calendar.MONTH, -1);
+		c.add(Calendar.SECOND, -1);
 		return c.getTime();
 	}
 	
