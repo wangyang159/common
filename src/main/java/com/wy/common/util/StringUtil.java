@@ -4,15 +4,30 @@ import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 public class StringUtil {
-	//方法1：判断源字符串是否有值，空引号(空白字符串)也算没值 (5分)
+	/**
+	 * 判断源字符串是否有值，空引号(空白字符串)也算没值 <br/>
+	 * true表示有值
+	 * false表示空
+	 * @param src
+	 * @return
+	 */
 	public static boolean hasLength(String src){
 		return src!=null && !src.equals("");
 	}
-	//方法2：判断源字符串 空格也算没有值
+	
+	/**
+	 * 判断源字符串 空格也算没有值
+	 * @param src
+	 * @return
+	 */
 	public static boolean hasText(String src){
 		return src!=null && !src.trim().equals("");
 	}
 	
+	/**
+	 * 随机生成单个中文，默认字符集GB2312
+	 * @return
+	 */
 	public static String getOneChineseStr(){
 		int q,w;
 		Random random=new Random();
@@ -32,7 +47,11 @@ public class StringUtil {
 		return s;
 	}
 	
-	//方法3：返回参数length个中文汉字字符串，字符集必须在GB2312(相当于中文简体)范围内，例如“中呀被”(5分)
+	/**
+	 * 返回参数length个中文汉字字符串，字符集必须在GB2312(相当于中文简体)范围内，例如“中呀被”(5分)
+	 * @param length
+	 * @return
+	 */
 	public static String randomChineseString(int length){
 		StringBuffer sb=new StringBuffer();
 		for (int i = 0; i < length; i++) {
@@ -40,7 +59,11 @@ public class StringUtil {
 		}
 		return sb.toString();
 	}
-	//方法4：返回中文姓名，必须以真实姓开头，百家姓在“六、附百家姓”里，名使用1-2个随机汉字(8分)，内部调用randomChineseString()方法(3分)。返回示例：“刘呀被”、“欧阳及为”
+	
+	/**
+	 * 返回中文姓名
+	 * @return
+	 */
 	public static String generateChineseName(){
 		String[] surname={"赵","钱","孙","李","周","吴","郑","王","冯","陈","楮","卫",
 				"蒋","沈","韩","杨","朱","秦","尤","许","何","吕","施","张",
