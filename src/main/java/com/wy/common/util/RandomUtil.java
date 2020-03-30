@@ -67,6 +67,20 @@ public class RandomUtil {
 		}
 		
 		/**
+		 * 返回1个1-9之间的随机字符组成的字符串
+		 * @return
+		 */
+		public static String randomNum (Integer length){
+			String st="123456789";
+			StringBuffer result=new StringBuffer();
+			for (int i = 0; i < length; i++) {
+				int index = random(0, st.length()-1);
+				result.append(st.charAt(index));
+			}
+			return result.toString();
+		}
+		
+		/**
 		 * 返回参数length个字符串
 		 * @param length
 		 * @return
